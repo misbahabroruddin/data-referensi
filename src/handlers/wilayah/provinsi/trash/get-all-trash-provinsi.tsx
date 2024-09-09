@@ -22,6 +22,7 @@ export const useGetAllTrashProvinsi = (queryParams: QueryParamsProvinsi) => {
     params = {
       ...params,
       nama: queryParams.nama,
+      page: 1,
     };
   }
 

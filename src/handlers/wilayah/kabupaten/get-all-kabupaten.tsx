@@ -22,6 +22,7 @@ export const useGetAllKabupaten = (queryParams: QueryParamsKabupaten) => {
     params = {
       ...params,
       nama: queryParams.nama,
+      page: 1,
     };
   }
 

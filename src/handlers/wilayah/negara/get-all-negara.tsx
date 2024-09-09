@@ -22,6 +22,7 @@ export const useGetAllNegara = (queryParams: QueryParamsNegara) => {
     params = {
       ...params,
       nama: queryParams.nama,
+      page: 1,
     };
   }
 

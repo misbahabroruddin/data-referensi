@@ -22,6 +22,7 @@ export const useGetAllTrashKabupaten = (queryParams: QueryParamsKabupaten) => {
     params = {
       ...params,
       nama: queryParams.nama,
+      page: 1,
     };
   }
 
