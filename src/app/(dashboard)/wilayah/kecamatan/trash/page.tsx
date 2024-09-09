@@ -7,7 +7,7 @@ import Link from "next/link";
 
 import { BasePageTitle } from "@/components/base-page-title";
 import { PageWrapper } from "@/components/page-wrapper";
-import { InputFileImport, InputWithIcon } from "@/components/ui/input";
+import { InputWithIcon } from "@/components/ui/input";
 import { SearchIcon } from "@/components/svg/search";
 import { useColumnTable } from "./components/column-definition";
 import { DataTable } from "@/components/data-table";
