@@ -47,7 +47,7 @@ export default function TrashProvinsiPage() {
           <p>Kembali</p>
         </button>
       </Link>
-      <BasePageTitle title="Daftar trash role" />
+      <BasePageTitle title="Daftar Trash Provinsi" />
       <InputWithIcon
         id="nama"
         placeholder="Cari nama"

@@ -46,7 +46,7 @@ export default function TrashNegaraPage() {
           <p>Kembali</p>
         </button>
       </Link>
-      <BasePageTitle title="Daftar trash role" />
+      <BasePageTitle title="Daftar Trash Negara" />
       <InputWithIcon
         id="nama"
         placeholder="Cari nama"
