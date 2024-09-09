@@ -68,6 +68,9 @@ export const ModalDetailNegara: React.FC<{
   useEffect(() => {
     if (isModalOpen) {
       getDetailNegara();
+      form.setValue("nama", detailNegara?.data?.nama);
+      if (detailNegara?.data?.kode_telepon)
+        form.setValue("kode_telepon", detailNegara?.data?.kode_telepon);
     }
   }, [isModalOpen]);
 
@@ -91,7 +94,9 @@ export const ModalDetailNegara: React.FC<{
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="text-center">Tambah Negara</DialogTitle>
+          <DialogTitle className="text-center">
+            {isEdit ? "Ubah" : "Detail"} Negara
+          </DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form className="grid gap-2" onSubmit={form.handleSubmit(onSubmit)}>
@@ -110,7 +115,7 @@ export const ModalDetailNegara: React.FC<{
                     <Input
                       id="nama"
                       className={cn(
-                        "col-span-6 rounded-lg disabled:opacity-100",
+                        "col-span-6 rounded-lg disabled:cursor-default disabled:opacity-100",
                         nama && validationErrorClass,
                       )}
                       placeholder="Nama"
@@ -139,7 +144,7 @@ export const ModalDetailNegara: React.FC<{
                     <Input
                       id="kode_telepon"
                       className={cn(
-                        "col-span-6 rounded-lg disabled:opacity-100",
+                        "col-span-6 rounded-lg disabled:cursor-default disabled:opacity-100",
                       )}
                       placeholder="Kode Telepon"
                       tabIndex={1}
