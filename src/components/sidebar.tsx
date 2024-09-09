@@ -37,8 +37,6 @@ export const Sidebar = () => {
   const pathname = usePathname();
   const page = useSelectedLayoutSegments();
 
-  console.log(page);
-
   useEffect(() => {
     const app = localStorage.getItem("app");
 
@@ -164,7 +162,7 @@ export const Sidebar = () => {
                     </ul>
                   </li>
                 ) : (
-                  <NavigationMenu orientation="horizontal">
+                  <NavigationMenu orientation="horizontal" key={menu.path}>
                     <NavigationMenuList>
                       <NavigationMenuItem>
                         <NavigationMenuTrigger
@@ -192,7 +190,7 @@ export const Sidebar = () => {
                   </NavigationMenu>
                 )
               ) : (
-                <TooltipProvider key={menu.link}>
+                <TooltipProvider key={menu.path}>
                   <Tooltip>
                     <TooltipTrigger>
                       <li key={menu.path} className="transition-transform">
