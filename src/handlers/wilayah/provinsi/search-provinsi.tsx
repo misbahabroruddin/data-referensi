@@ -32,4 +32,6 @@ export const useSearchProvinsi = (limit = 1000) => {
     queryFn: fetchSearchProvinsi,
     enabled: !!session.token,
   });
+
+  return { ...query };
 };
