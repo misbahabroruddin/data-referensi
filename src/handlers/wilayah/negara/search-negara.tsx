@@ -32,4 +32,6 @@ export const useSearchNegara = (limit = 1000) => {
     queryFn: fetchSearchNegara,
     enabled: !!session.token,
   });
+
+  return { ...query };
 };
