@@ -89,7 +89,7 @@ export default function NegaraPage() {
   return (
     <PageWrapper>
       <BasePageTitle title="Daftar Negara" />
-      <div className="flex justify-between">
+      <div className="mt-6 flex justify-between">
         <InputWithIcon
           id="nama"
           placeholder="Cari nama"
