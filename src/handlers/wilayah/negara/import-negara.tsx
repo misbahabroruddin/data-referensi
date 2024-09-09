@@ -1,6 +1,6 @@
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 
 import { useAxios } from "@/lib/hooks/use-axios";
@@ -9,6 +9,7 @@ import { useErrorHandling } from "@/lib/utils/error-handler";
 export const useImportNegara = () => {
   const axios = useAxios();
   const { errorHandler } = useErrorHandling();
+  const queryClient = useQueryClient();
 
   const importFile = async (form: any) => {
     const formData = new FormData();
@@ -18,6 +19,18 @@ export const useImportNegara = () => {
       const { data } = await axios.post("/wilayah/negaras/import", formData);
 
       toast.success("Import berhasil");
+
+      queryClient.invalidateQueries({
+        queryKey: ["get-all-negara"],
+      });
+
+      queryClient.invalidateQueries({
+        queryKey: ["get-all-trash-negara"],
+      });
+
+      queryClient.removeQueries({
+        queryKey: ["get-search-negara"],
+      });
 
       return data;
     } catch (error: any) {

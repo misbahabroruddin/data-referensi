@@ -40,6 +40,10 @@ export const useCreateNegara = () => {
         queryKey: ["get-all-trash-negara"],
       });
 
+      queryClient.removeQueries({
+        queryKey: ["get-search-negara"],
+      });
+
       toast.success("Negara berhasil ditambahkan");
 
       return data;

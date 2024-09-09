@@ -25,6 +25,10 @@ export const useRestoreNegara = () => {
         queryKey: ["get-all-trash-negara"],
       });
 
+      queryClient.removeQueries({
+        queryKey: ["get-search-negara"],
+      });
+
       return data;
     } catch (error: any) {
       errorHandler(error);

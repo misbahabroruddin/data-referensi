@@ -44,6 +44,10 @@ export const useUpdateNegara = (negaraId: string) => {
         queryKey: ["get-all-trash-negara"],
       });
 
+      queryClient.removeQueries({
+        queryKey: ["get-search-negara"],
+      });
+
       toast.success("Negara berhasil diperbarui");
 
       return data;
