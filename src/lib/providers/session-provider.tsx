@@ -1,6 +1,5 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import React, { createContext, useState, ReactNode, useEffect } from "react";
 
 interface SessionType {
@@ -38,7 +37,7 @@ export const SessionProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [session, setSession] = useState<SessionType>(initialValues);
-  const searchParam = useSearchParams();
+  const searchParam = new URLSearchParams();
 
   const setToken = (token: string | undefined) => {
     setSession((prev) => ({ ...prev, token }));
