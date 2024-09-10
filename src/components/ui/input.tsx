@@ -34,7 +34,7 @@ const InputWithIcon = React.forwardRef<HTMLInputElement, InputProps>(
         className={cn("relative col-span-6 w-full", containerInputIconClass)}
       >
         <label
-          className="absolute left-2 top-1/2 z-40 -translate-y-1/2"
+          className="absolute left-2 top-1/2 z-[1] -translate-y-1/2"
           htmlFor={props.id}
         >
           {icon}
