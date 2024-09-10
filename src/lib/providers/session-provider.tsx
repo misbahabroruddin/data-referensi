@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import React, { createContext, useState, ReactNode, useEffect } from "react";
 
 interface SessionType {
@@ -38,8 +38,7 @@ export const SessionProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [session, setSession] = useState<SessionType>(initialValues);
-
-  const router = useRouter();
+  const searchParam = useSearchParams();
 
   const setToken = (token: string | undefined) => {
     setSession((prev) => ({ ...prev, token }));
@@ -75,14 +74,18 @@ export const SessionProvider: React.FC<{ children: ReactNode }> = ({
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const role = localStorage.getItem("role");
-    const app = localStorage.getItem("app");
+    const tokenLocalStorage = localStorage.getItem("token");
+    const roleLocalStorage = localStorage.getItem("role");
+    const appLocalStorage = localStorage.getItem("app");
 
-    if (token && role && app) {
-      setToken(token!);
-      setRole(role!);
-      setApp(app!);
+    const token = searchParam.get("key");
+    const role = searchParam.get("role");
+    const app = searchParam.get("app");
+
+    if (tokenLocalStorage || token) {
+      setToken(tokenLocalStorage || token!);
+      setRole(roleLocalStorage || role!);
+      setApp(appLocalStorage || app!);
     } else {
       window.location.href = `${process.env.NEXT_PUBLIC_SSO_BASE_URL}/backend/login`;
     }
