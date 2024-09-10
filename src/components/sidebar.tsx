@@ -46,12 +46,8 @@ export const Sidebar = () => {
   useEffect(() => {
     if (pathname.includes("/wilayah")) {
       return setOpen("/wilayah");
-    } else if (pathname.includes("/document")) {
-      return setOpen("/document");
-    } else if (pathname.includes("/anggota")) {
-      return setOpen("/anggota");
-    } else if (pathname.includes("/laporan")) {
-      return setOpen("/laporan");
+    } else if (pathname.includes("/biodata")) {
+      return setOpen("/biodata");
     }
 
     setOpen(null);
@@ -184,7 +180,35 @@ export const Sidebar = () => {
                             />
                           </div>
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent>asdw</NavigationMenuContent>
+                        <NavigationMenuContent className="flex flex-col gap-1 border-blue-05 bg-blue-05 dark:border-none md:w-[250px]">
+                          {menu.children.map((child: any) => (
+                            <div
+                              key={child.path}
+                              className="transition-transform"
+                            >
+                              <Link
+                                href={child.path}
+                                className={`flex items-center gap-2 rounded-lg p-2 text-white hover:bg-sky-03 ${
+                                  page.includes(child.path?.slice(1)) ||
+                                  pathname === child.path ||
+                                  pathname === `${child.path}/trash`
+                                    ? "bg-sky-03"
+                                    : null
+                                }`}
+                              >
+                                <Image
+                                  src={child.icon}
+                                  width={24}
+                                  height={24}
+                                  alt={child.label}
+                                />
+                                <p className="text-sm font-[500]">
+                                  {child.label}
+                                </p>
+                              </Link>
+                            </div>
+                          ))}
+                        </NavigationMenuContent>
                       </NavigationMenuItem>
                     </NavigationMenuList>
                   </NavigationMenu>
