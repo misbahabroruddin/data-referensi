@@ -30,7 +30,7 @@ export default function TrashKecamatanPage() {
   const { columns } = useColumnTable();
 
   const handleSearch = useDebouncedCallback((value) => {
-    setQueryParams((prev) => ({ ...prev, name: value }));
+    setQueryParams((prev) => ({ ...prev, nama: value }));
   }, 1000);
 
   const setPage = (value: number) => {
