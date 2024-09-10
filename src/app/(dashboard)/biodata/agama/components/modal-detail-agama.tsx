@@ -161,6 +161,7 @@ export const ModalDetailAgama: React.FC<{
                 <Button
                   type="submit"
                   className="mt-2 w-32 bg-blue-05 hover:bg-blue-06"
+                  disabled={isLoadingSubmit}
                 >
                   {isLoadingSubmit ? (
                     <Spinner className="h-4 w-4" />

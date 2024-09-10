@@ -170,6 +170,7 @@ export const ModalAddProvinsi: React.FC = () => {
               <Button
                 type="submit"
                 className="w-32 bg-blue-05 hover:bg-blue-06"
+                disabled={isLoadingSubmit}
               >
                 {isLoadingSubmit ? <Spinner className="h-4 w-4" /> : "Simpan"}
               </Button>
