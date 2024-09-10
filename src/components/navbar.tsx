@@ -31,7 +31,7 @@ export const Navbar: React.FC = () => {
     {
       icon: <SignOutIcon className="h-5 w-5 lg:h-6 lg:w-6" />,
       label: "Menu",
-      link: "/home",
+      link: `${process.env.NEXT_PUBLIC_SSO_BASE_URL}/home`,
     },
   ];
   return (
@@ -77,7 +77,7 @@ export const Navbar: React.FC = () => {
               )}
             </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="text-black-07 mr-1 w-[60px] rounded p-1 text-xl shadow lg:w-[186px]">
+          <DropdownMenuContent className="mr-1 w-[60px] rounded p-1 text-xl text-black-07 shadow lg:w-[186px]">
             {dropdownMenu.map((item: DropdownMenu, index) => (
               <Link href={item.link} key={index}>
                 <DropdownMenuItem className="flex cursor-pointer gap-2 p-2 text-sm lg:p-3 lg:text-base">
