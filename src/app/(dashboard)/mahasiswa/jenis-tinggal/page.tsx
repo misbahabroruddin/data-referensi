@@ -90,7 +90,7 @@ export default function JenisTinggalPage() {
 
   return (
     <PageWrapper>
-      <BasePageTitle title="Daftar JenisTinggal" />
+      <BasePageTitle title="Daftar Jenis Tinggal" />
       <div className="mt-6 flex justify-between">
         <InputWithIcon
           id="jenis_tinggal"

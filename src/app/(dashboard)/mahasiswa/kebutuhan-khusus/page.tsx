@@ -90,7 +90,7 @@ export default function KebutuhanKhususPage() {
 
   return (
     <PageWrapper>
-      <BasePageTitle title="Daftar KebutuhanKhusus" />
+      <BasePageTitle title="Daftar Kebutuhan Khusus" />
       <div className="mt-6 flex justify-between">
         <InputWithIcon
           id="kebutuhan_khusus"
