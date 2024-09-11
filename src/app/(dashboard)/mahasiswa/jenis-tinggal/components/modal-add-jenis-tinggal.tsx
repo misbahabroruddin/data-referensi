@@ -85,7 +85,7 @@ export const ModalAddJenisTinggal: React.FC = () => {
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="kode"
                   >
-                    Kode
+                    Kode <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -112,7 +112,8 @@ export const ModalAddJenisTinggal: React.FC = () => {
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="jenis_tinggal"
                   >
-                    Jenis Tinggal
+                    Jenis Tinggal{" "}
+                    <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input

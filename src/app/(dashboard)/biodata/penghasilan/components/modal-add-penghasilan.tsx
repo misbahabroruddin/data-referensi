@@ -85,7 +85,7 @@ export const ModalAddPenghasilan: React.FC = () => {
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="nama"
                   >
-                    Nama
+                    Nama <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -112,7 +112,7 @@ export const ModalAddPenghasilan: React.FC = () => {
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="kode"
                   >
-                    Kode
+                    Kode <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -139,7 +139,8 @@ export const ModalAddPenghasilan: React.FC = () => {
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="rentang"
                   >
-                    Rentang Penghasilan
+                    Rentang Penghasilan{" "}
+                    <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -166,7 +167,8 @@ export const ModalAddPenghasilan: React.FC = () => {
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="point_kip_kuliah"
                   >
-                    Point KIP Kuliah
+                    Point KIP Kuliah{" "}
+                    <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input

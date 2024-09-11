@@ -107,7 +107,7 @@ export const ModalDetailSuku: React.FC<{
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="nama"
                   >
-                    Nama
+                    Nama <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -136,7 +136,7 @@ export const ModalDetailSuku: React.FC<{
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="daerah_asal"
                   >
-                    Daerah Asal
+                    Daerah Asal <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input

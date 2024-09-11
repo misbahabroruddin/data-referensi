@@ -84,7 +84,7 @@ export const ModalAddPekerjaan: React.FC = () => {
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="kategori"
                   >
-                    Kategori
+                    Kategori <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -111,7 +111,7 @@ export const ModalAddPekerjaan: React.FC = () => {
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="deskripsi"
                   >
-                    Deskripsi
+                    Deskripsi <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input

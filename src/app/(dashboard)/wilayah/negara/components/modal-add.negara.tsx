@@ -80,10 +80,10 @@ export const ModalAddNegara: React.FC = () => {
               render={({ field }) => (
                 <FormItem className="grid grid-cols-6 items-center">
                   <FormLabel
-                    className="text-black-07 col-span-6 text-sm"
+                    className="col-span-6 text-sm text-black-07"
                     htmlFor="nama"
                   >
-                    Nama
+                    Nama <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -107,7 +107,7 @@ export const ModalAddNegara: React.FC = () => {
               render={({ field }) => (
                 <FormItem className="grid grid-cols-6 items-center">
                   <FormLabel
-                    className="text-black-07 col-span-6 text-sm"
+                    className="col-span-6 text-sm text-black-07"
                     htmlFor="kode_telepon"
                   >
                     Kode Telepon
@@ -127,7 +127,7 @@ export const ModalAddNegara: React.FC = () => {
             <DialogFooter className="mt-2">
               <Button
                 type="submit"
-                className="bg-blue-05 hover:bg-blue-06 w-32"
+                className="w-32 bg-blue-05 hover:bg-blue-06"
               >
                 {isLoadingSubmit ? <Spinner className="h-4 w-4" /> : "Simpan"}
               </Button>

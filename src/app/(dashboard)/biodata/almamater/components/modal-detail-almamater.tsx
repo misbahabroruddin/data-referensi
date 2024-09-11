@@ -117,7 +117,7 @@ export const ModalDetailAlmamater: React.FC<{
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="kode"
                   >
-                    Kode
+                    Kode <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -146,7 +146,7 @@ export const ModalDetailAlmamater: React.FC<{
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="ukuran"
                   >
-                    Ukuran
+                    Ukuran <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -175,7 +175,7 @@ export const ModalDetailAlmamater: React.FC<{
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="lingkar_dada"
                   >
-                    Lingkar Dada
+                    Lingkar Dada <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -204,7 +204,8 @@ export const ModalDetailAlmamater: React.FC<{
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="panjang_lengan"
                   >
-                    Panjang Lengan
+                    Panjang Lengan{" "}
+                    <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
