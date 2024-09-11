@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { useAxios } from "@/lib/hooks/use-axios";
 import { useErrorHandling } from "@/lib/utils/error-handler";
 
-export const useUpdateTransportasi = (jenisTinggalId: string) => {
+export const useUpdateTransportasi = (transportasiId: string) => {
   const axios = useAxios();
 
   const queryClient = useQueryClient();
@@ -21,7 +21,7 @@ export const useUpdateTransportasi = (jenisTinggalId: string) => {
 
     try {
       const { data } = await axios.put(
-        `/mahasiswa/transportasis/${jenisTinggalId}`,
+        `/mahasiswa/transportasis/${transportasiId}`,
         reqBody,
         {
           headers: {
