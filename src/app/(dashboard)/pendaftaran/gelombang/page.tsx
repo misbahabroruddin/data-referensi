@@ -95,7 +95,7 @@ export default function GelombangPage() {
       <div className="mt-6 flex justify-between">
         <InputWithIcon
           id="gelombang"
-          placeholder="Cari jenis tinggal"
+          placeholder="Cari gelombang"
           className="w-full md:w-72 lg:w-80"
           onChange={(e) => handleSearch(e.target.value)}
           icon={<SearchIcon color="#999999" />}
