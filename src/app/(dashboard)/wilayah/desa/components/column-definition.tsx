@@ -33,9 +33,9 @@ export const useColumnTable = () => {
       cell: ({ row }) => <div className="text-start">{row.original.kode}</div>,
     },
     {
-      accessorKey: "Kabupaten",
+      accessorKey: "Kecamatan",
       header: () => {
-        return <div className="text-center">Kabupaten</div>;
+        return <div className="text-center">Kecamatan</div>;
       },
       cell: ({ row }) => (
         <div className="text-start">{row.original.kecamatan?.nama}</div>
