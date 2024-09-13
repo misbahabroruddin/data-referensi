@@ -29,7 +29,7 @@ export const useColumnTable = () => {
     {
       accessorKey: "point",
       header: () => {
-        return <div className="text-center">Kode</div>;
+        return <div className="text-center">Point</div>;
       },
       cell: ({ row }) => <div className="text-start">{row.original.point}</div>,
     },
