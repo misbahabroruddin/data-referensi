@@ -87,10 +87,6 @@ export const ModalDetailJenisSeleksi: React.FC<{
         detailJenisSeleksi?.data?.pakai_ruangan === "1" ? true : false,
       );
       form.setValue(
-        "pakai_ruangan",
-        detailJenisSeleksi?.data?.pakai_ruangan === "1" ? true : false,
-      );
-      form.setValue(
         "bebas_tes",
         detailJenisSeleksi?.data?.bebas_tes === "1" ? true : false,
       );
@@ -119,10 +115,6 @@ export const ModalDetailJenisSeleksi: React.FC<{
     form.setValue(
       "wajib_ikut",
       detailJenisSeleksi?.data?.wajib_ikut === "1" ? true : false,
-    );
-    form.setValue(
-      "pakai_ruangan",
-      detailJenisSeleksi?.data?.pakai_ruangan === "1" ? true : false,
     );
     form.setValue(
       "pakai_ruangan",
@@ -190,7 +182,7 @@ export const ModalDetailJenisSeleksi: React.FC<{
                     className="col-span-6 text-sm text-black-07"
                     htmlFor="nama"
                   >
-                    Kelulusan <span className="text-xs text-red-500">*</span>
+                    Nama <span className="text-xs text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -199,7 +191,7 @@ export const ModalDetailJenisSeleksi: React.FC<{
                         "col-span-6 rounded-lg disabled:cursor-default disabled:opacity-100",
                         nama && validationErrorClass,
                       )}
-                      placeholder="Kelulusan"
+                      placeholder="Nama"
                       tabIndex={1}
                       disabled={isLoading || !isEdit}
                       autoComplete="off"
