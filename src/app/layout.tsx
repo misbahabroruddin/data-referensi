@@ -28,21 +28,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className} suppressHydrationWarning>
-        <SessionProvider>
-          <QueryProvider>
-            <SidebarProvider>
-              <Suspense
-                fallback={
-                  <div className="grid h-screen w-screen place-items-center">
-                    <Spinner />
-                  </div>
-                }
-              >
-                {children}
-              </Suspense>
-            </SidebarProvider>
-          </QueryProvider>
-        </SessionProvider>
+        <Suspense
+          fallback={
+            <div className="grid h-screen w-screen place-items-center">
+              <Spinner />
+            </div>
+          }
+        >
+          <SessionProvider>
+            <QueryProvider>
+              <SidebarProvider>{children}</SidebarProvider>
+            </QueryProvider>
+          </SessionProvider>
+        </Suspense>
         <Toaster position="top-center" richColors theme="light" />
       </body>
     </html>

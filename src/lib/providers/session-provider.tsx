@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import React, { createContext, useState, ReactNode, useEffect } from "react";
 
 interface SessionType {
@@ -37,7 +38,7 @@ export const SessionProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [session, setSession] = useState<SessionType>(initialValues);
-  const searchParam = new URLSearchParams();
+  const searchParam = useSearchParams();
 
   const setToken = (token: string | undefined) => {
     setSession((prev) => ({ ...prev, token }));
@@ -81,10 +82,10 @@ export const SessionProvider: React.FC<{ children: ReactNode }> = ({
     const role = searchParam.get("role");
     const app = searchParam.get("app");
 
-    if (tokenLocalStorage || token) {
-      setToken(tokenLocalStorage || token!);
-      setRole(roleLocalStorage || role!);
-      setApp(appLocalStorage || app!);
+    if (token || tokenLocalStorage) {
+      setToken(token || tokenLocalStorage!);
+      setRole(role || roleLocalStorage!);
+      setApp(app || appLocalStorage!);
     } else {
       window.location.href = `${process.env.NEXT_PUBLIC_SSO_BASE_URL}/backend/login`;
     }
