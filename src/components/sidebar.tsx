@@ -24,6 +24,12 @@ import {
 } from "./ui/navigation-menu";
 import { Skeleton } from "./ui/skeleton";
 
+interface MenuItem {
+  path: string;
+  label: string;
+  children?: MenuItem[];
+}
+
 export const Sidebar = () => {
   const [isHover, setIsHover] = useState<boolean>(false);
   const [appId, setAppId] = useState<string | null>(null);
@@ -33,7 +39,7 @@ export const Sidebar = () => {
 
   const { data, isLoading } = useGetSidebarMenu(appId!);
 
-  const sidebarMenu = data?.data;
+  const sidebarMenu: MenuItem[] | undefined = data?.data ?? [];
 
   const pathname = usePathname();
   const page = useSelectedLayoutSegments();
@@ -45,30 +51,24 @@ export const Sidebar = () => {
   }, []);
 
   useEffect(() => {
-    if (pathname.includes("/wilayah")) {
-      return setOpen("/wilayah");
-    } else if (pathname.includes("/biodata")) {
-      return setOpen("/biodata");
-    } else if (pathname.includes("/mahasiswa")) {
-      return setOpen("/mahasiswa");
-    } else if (pathname.includes("/seleksi")) {
-      return setOpen("/seleksi");
-    } else if (pathname.includes("/pendaftaran")) {
-      return setOpen("/pendaftaran");
-    } else if (pathname.includes("/berita")) {
-      return setOpen("/berita");
-    } else if (pathname.includes("/jabatan")) {
-      return setOpen("/jabatan");
-    } else if (pathname.includes("/dokumen")) {
-      return setOpen("/dokumen");
-    } else if (pathname.includes("/sippm")) {
-      return setOpen("/sippm");
-    } else if (pathname.includes("/marketing")) {
-      return setOpen("/marketing");
-    }
+    if (sidebarMenu?.length === 0) return;
 
-    setOpen(null);
-  }, [pathname]);
+    const findMatchingPath = (menuItems: MenuItem[]): string | null => {
+      for (const item of menuItems) {
+        if (pathname.includes(item.path)) {
+          return item.path;
+        }
+        if (item.children && item.children.length > 0) {
+          const childPath = findMatchingPath(item.children);
+          if (childPath) return childPath;
+        }
+      }
+      return null;
+    };
+
+    const matchedPath = findMatchingPath(sidebarMenu!);
+    setOpen(matchedPath || null);
+  }, [pathname, sidebarMenu]);
 
   return (
     <aside
@@ -77,7 +77,7 @@ export const Sidebar = () => {
         isSidebarExpand ? "w-64" : "w-[72px]",
       )}
     >
-      <div className="mt-20 flex w-full flex-col items-center justify-center px-3">
+      <div className="flex h-[96%] w-full flex-col overflow-y-scroll px-3 pt-20">
         <button
           className={cn(
             "absolute -right-5 top-36 z-10 grid h-10 w-10 place-items-center rounded-full border-[2px] border-blue-05 bg-white",
