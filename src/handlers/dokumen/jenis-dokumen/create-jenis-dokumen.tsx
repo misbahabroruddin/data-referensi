@@ -39,7 +39,7 @@ export const useCreateJenisDokumen = () => {
         queryKey: ["get-search-jenis-dokumen"],
       });
 
-      toast.success("Jabatan Fungsional berhasil ditambahkan");
+      toast.success("Jenis dokumen berhasil ditambahkan");
 
       return data;
     } catch (error: any) {
