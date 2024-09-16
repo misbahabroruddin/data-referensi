@@ -1,9 +1,7 @@
 "use client";
 
+import { CardWelcome } from "./components/card-welcome";
+
 export default function DashboardPage() {
-  return (
-    <div>
-      <p>dashboard</p>
-    </div>
-  );
+  return <CardWelcome />;
 }
