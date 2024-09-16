@@ -79,7 +79,12 @@ export const Sidebar = () => {
         isSidebarExpand ? "w-64" : "w-[72px]",
       )}
     >
-      <div className="flex h-[96%] w-full flex-col overflow-y-scroll px-3 pt-20">
+      <div
+        className={cn(
+          "flex h-[96%] w-full flex-col px-3 pt-20",
+          isSidebarExpand ? "overflow-y-auto" : "",
+        )}
+      >
         <button
           className={cn(
             "absolute -right-5 top-36 z-10 grid h-10 w-10 place-items-center rounded-full border-[2px] border-blue-05 bg-white",
