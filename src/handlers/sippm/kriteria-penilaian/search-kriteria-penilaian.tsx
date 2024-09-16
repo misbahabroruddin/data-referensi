@@ -15,7 +15,7 @@ export const useSearchKriteriaPenilaian = (limit = 1000) => {
 
   const fetchSearchKriteriaPenilaian = async () => {
     try {
-      const { data } = await axios.get("/sippm/kriteri-penilaians", {
+      const { data } = await axios.get("/sippm/kriteria-penilaians", {
         params: {
           limit,
         },
@@ -28,7 +28,7 @@ export const useSearchKriteriaPenilaian = (limit = 1000) => {
   };
 
   const query = useQuery({
-    queryKey: ["get-search-kriteri-penilaian", limit],
+    queryKey: ["get-search-kriteria-penilaian", limit],
     queryFn: fetchSearchKriteriaPenilaian,
     enabled: !!session.token,
   });
