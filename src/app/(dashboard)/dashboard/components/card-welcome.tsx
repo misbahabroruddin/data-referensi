@@ -19,7 +19,7 @@ export const CardWelcome = () => {
       setGreeting("Selamat Siang");
     } else if (hour <= 18) {
       setGreeting("Selamat Sore");
-    } else if (hour > 18 && hour < 23) {
+    } else if (hour > 18 && hour < 24) {
       setGreeting("Selamat Malam");
     } else {
       setGreeting("Halo");
