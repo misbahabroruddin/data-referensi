@@ -28,9 +28,7 @@ import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import { validationErrorClass } from "@/lib/constant/error-class";
-import { NumericFormat } from "react-number-format";
 import { useCreateRincianBiaya } from "@/handlers/sippm/rincian-biaya/create-rincian-biaya";
-import { NumberFormat } from "@/components/ui/number-format";
 
 export const ModalAddRincianBiaya: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);

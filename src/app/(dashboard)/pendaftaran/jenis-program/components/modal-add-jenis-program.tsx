@@ -49,7 +49,7 @@ export const ModalAddJenisProgram: React.FC = () => {
     },
   });
 
-  const { jenis_program, is_ipc, kode } = form.formState.errors;
+  const { jenis_program, kode } = form.formState.errors;
 
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     await onSubmitJenisProgram(data);

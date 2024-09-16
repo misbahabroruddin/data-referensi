@@ -32,7 +32,6 @@ import { EditIcon } from "@/components/svg/edit";
 import { EyeIcon } from "@/components/svg/eye";
 import { useUpdateRincianBiaya } from "@/handlers/sippm/rincian-biaya/update-rincian-biaya";
 import { useGetDetailRincianBiaya } from "@/handlers/sippm/rincian-biaya/get-detail-rincian-biaya";
-import { NumericFormat } from "react-number-format";
 
 export const ModalDetailRincianBiaya: React.FC<{
   isEdit?: boolean;

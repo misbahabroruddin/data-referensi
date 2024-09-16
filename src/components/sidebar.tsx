@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, Fragment } from "react";
+import { useEffect, useState, Fragment, useMemo } from "react";
 import Link from "next/link";
 import { usePathname, useSelectedLayoutSegments } from "next/navigation";
 import Image from "next/image";
@@ -39,7 +39,9 @@ export const Sidebar = () => {
 
   const { data, isLoading } = useGetSidebarMenu(appId!);
 
-  const sidebarMenu: MenuItem[] | undefined = data?.data ?? [];
+  const sidebarMenu: MenuItem[] | undefined = useMemo(() => {
+    return data?.data ?? [];
+  }, [data]);
 
   const pathname = usePathname();
   const page = useSelectedLayoutSegments();
