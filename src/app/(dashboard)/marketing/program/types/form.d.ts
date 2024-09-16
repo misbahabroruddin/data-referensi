@@ -1,0 +1,3 @@
+interface FormProgram {
+  nama: string;
+}
